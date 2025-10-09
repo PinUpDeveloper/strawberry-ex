@@ -1,77 +1,122 @@
+  <!doctype html>
+  <html lang="en">
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>About • Strawberry Express</title>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+      <link rel="stylesheet" href="../assets/css/about.css">
+    </head>
+    <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-white">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="../index.html">
+          <img src="../assets/img/logo.png" alt="Strawberry Express logo">
+          <span class="fw-bold">Strawberry Express</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>About • Strawberry Express</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css">
-  </head>
-  <body>
-  <nav class="navbar navbar-expand-lg bg-white">
-    <div class="container">
-      <a class="navbar-brand d-flex align-items-center" href="index.html">
-        <img src="assets/img/logo.png" alt="Strawberry Express logo">
-        <span class="fw-bold">Strawberry Express</span>
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample" aria-controls="navbarsExample" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navbarsExample">
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-          <li class="nav-item"><a class="nav-link " href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link " href="products.html">Products</a></li>
-          <li class="nav-item"><a class="nav-link " href="delivery.html">Delivery</a></li>
-          <li class="nav-item"><a class="nav-link active fw-semibold text-success" href="about.html">About</a></li>
-          <li class="nav-item"><a class="nav-link " href="contact.html">Contact</a></li>
-          <li class="nav-item ms-lg-2"><a class="btn btn-sm btn-brand" href="cart.html">Cart</a></li>
-        </ul>
+        <div class="collapse navbar-collapse" id="navbar">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link " href="../index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link " href="products.html">Products</a></li>
+            <li class="nav-item"><a class="nav-link " href="delivery.html">Delivery</a></li>
+            <li class="nav-item"><a class="nav-link active fw-semibold text-success" href="about.html">About</a></li>
+            <li class="nav-item"><a class="nav-link " href="contact.html">Contact</a></li>
+            <li class="nav-item ms-lg-2"><a class="btn btn-sm btn-brand" href="cart.html">Cart</a></li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </nav>
-  <main class="container my-4">
+    </nav>
 
-  <section class="row g-4">
-    <div class="col-lg-7">
-      <h1 class="section-title">About Strawberry Express</h1>
-      <p class="lead">We are an eco‑friendly grocery delivery service focused on local, seasonal produce and transparent sourcing.</p>
-      <p>Our mission is to make healthy, sustainable food accessible. We partner with growers who follow responsible practices.</p>
-      <div class="row row-cols-1 row-cols-md-3 g-3 mt-1">
-        <div class="col"><div class="p-3 border rounded">🌿 Organic</div></div>
-        <div class="col"><div class="p-3 border rounded">🚚 Same‑day</div></div>
-        <div class="col"><div class="p-3 border rounded">♻️ Low waste</div></div>
-      </div>
-    </div>
-    <div class="col-lg-5">
-      <div class="p-4 bg-light rounded h-100 d-flex flex-column justify-content-center">
-        <h5 class="mb-3">Values</h5>
-        <ul class="mb-0">
-          <li>Local partnerships</li>
-          <li>Fair pricing</li>
-          <li>Customer happiness</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  </main>
-  <footer>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-8">
-          <div class="footer-small">
-            <strong>Team:</strong> StrawberryExp — I.Armat | T.Marsel | A.Aldiyar — SE2403
+    <main class="container my-5">
+      <section class="text-center mb-5">
+        <div class="rounded-4 overflow-hidden position-relative">
+          <div class="position-absolute top-50 start-50 translate-middle text-white bg-dark bg-opacity-50 p-4 rounded">
+            <h1 class="display-5 fw-bold">Fresh. Local. Sustainable.</h1>
+            <p class="lead mb-0">Your favorite eco grocery partner since 2025.</p>
           </div>
-          <div class="small text-muted">© 2025 Strawberry Express. All rights reserved.</div>
         </div>
-        <div class="col-md-4 text-md-end mt-3 mt-md-0">
-          <a class="btn btn-outline-success btn-sm" href="https://getbootstrap.com/docs/5.3/getting-started/introduction" target="_blank" rel="noopener">Bootstrap Docs</a>
+      </section>
+
+      <section class="row align-items-center g-5 mb-5">
+        <div class="col-lg-6">
+          <h1 class="section-title mb-3">About Strawberry Express</h1>
+          <p class="lead">We are an <strong>eco-friendly grocery delivery</strong> service connecting you directly to local farms. Our goal is simple — fresh, seasonal food delivered to your door with zero unnecessary waste.</p>
+          <p>Founded in 2025, Strawberry Express was born out of a love for nature and good food. We believe that everyone deserves access to healthy ingredients, grown responsibly and delivered sustainably.</p>
+          <div class="row row-cols-1 row-cols-md-3 g-3 mt-1">
+            <div class="col"><div class="p-3 border rounded text-center">🌿 Organic</div></div>
+            <div class="col"><div class="p-3 border rounded text-center">🚚 Same-day</div></div>
+            <div class="col"><div class="p-3 border rounded text-center">♻️ Low waste</div></div>
+          </div>
         </div>
+        <div class="col-lg-6">
+          <img src="../assets/img/delivery.avif" alt="Eco delivery" class="img-fluid rounded-4 shadow-sm">
+        </div>
+      </section>
+
+      <section class="row g-4 mb-5">
+        <div class="col-lg-6">
+          <img src="../assets/img/local-produce.jpg" alt="Local produce" class="img-fluid rounded-4 shadow-sm mb-3 mb-lg-0">
+        </div>
+        <div class="col-lg-6 d-flex flex-column justify-content-center">
+          <h2 class="section-title mb-3">Our Values</h2>
+          <ul class="list-unstyled fs-5">
+            <li>🌱 100% locally sourced produce</li>
+            <li>🚲 Carbon-neutral delivery options</li>
+            <li>📦 Plastic-free packaging</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="my-5">
+        <div class="text-center mb-4">
+          <h2 class="section-title">Our Mission</h2>
+          <p class="lead">Supporting local growers and reducing environmental impact — one basket at a time.</p>
+        </div>
+        <div class="row row-cols-1 row-cols-md-3 g-4 text-center">
+          <div class="col">
+            <div class="p-4 border rounded-3 h-100">
+              <h5>🤝 Community</h5>
+              <p>We collaborate with small farms and artisans to empower sustainable agriculture.</p>
+            </div>
+          </div>
+          <div class="col">
+            <div class="p-4 border rounded-3 h-100">
+              <h5>💚 Sustainability</h5>
+              <p>Every step — from harvest to delivery — is designed to minimize waste and emissions.</p>
+            </div>
+          </div>
+          <div class="col">
+            <div class="p-4 border rounded-3 h-100">
+              <h5>🍓 Quality</h5>
+              <p>We hand-select the freshest produce and ensure every box meets our high standards.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="my-5 text-center bg-light rounded-4 p-5 shadow-sm">
+        <h2 class="section-title mb-3">Join Our Eco Journey</h2>
+        <p class="lead mb-4">Be part of a community that values freshness, transparency, and respect for the planet.</p>
+        <a href="products.html" class="btn btn-brand btn-lg">Explore Our Products</a>
+      </section>
+
+    </main>
+
+    <footer class="py-4 border-top mt-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8">
+            <div class="footer-small">
+              <strong>Team:</strong> StrawberryExp — I.Armat | T.Marsel | A.Aldiyar — SE2403
+            </div>
+            <div class="small text-muted">© 2025 Strawberry Express. All rights reserved.</div>
+          </div>
       </div>
-    </div>
-  </footer>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  </body>
-</html>
+    </footer>
+    </body>
+  </html>
