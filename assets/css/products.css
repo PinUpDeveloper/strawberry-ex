@@ -1,0 +1,125 @@
+:root {
+  --brand-pink: #FF6F6F;
+  --brand-pink-dark: #A64747;
+  --brand-beige: #F5F5DC;
+  --brand-brown: #795548;
+}
+
+/* Base styles */
+body {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  color: #222;
+  background: linear-gradient(270deg, #ffeaea, #ffd6d6, #ffeaea, #fffdfd);
+  background-size: 400% 400%;
+  animation: gradientFlow 15s ease infinite;
+  margin: 0;
+  padding: 0;
+}
+
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Navbar */
+.navbar {
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,.06);
+  padding: 0.75rem 1.5rem;
+}
+
+.navbar-brand img {
+  height: 42px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.nav-link.active {
+  color: var(--brand-pink-dark) !important;
+}
+
+/* Page title */
+.page-title {
+  text-align: center;
+  color: var(--brand-pink-dark);
+  font-weight: 700;
+  margin: 2rem 0;
+}
+
+/* Product grid */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  padding: 0 1.5rem 3rem;
+}
+
+/* Product card */
+.product-card {
+  background: #fff;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0,0,0,.08);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 28px rgba(0,0,0,.12);
+}
+
+.product-card img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  border-bottom: 1px solid #eee;
+}
+
+.product-card .card-body {
+  padding: 1rem;
+  text-align: center;
+}
+
+.product-card h5 {
+  margin: 0.5rem 0;
+  color: var(--brand-brown);
+  font-weight: 600;
+}
+
+.product-card p {
+  margin: 0.25rem 0 1rem;
+  color: #555;
+}
+
+.product-card .price {
+  color: var(--brand-pink-dark);
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+/* Button */
+.btn-buy {
+  background: var(--brand-pink);
+  color: #fff;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.6rem 1.25rem;
+  cursor: pointer;
+  transition: background .2s ease;
+}
+
+.btn-buy:hover {
+  background: var(--brand-pink-dark);
+}
+
+/* Footer */
+footer {
+  background: #f8f9fa;
+  border-top: 1px solid #eee;
+  text-align: center;
+  padding: 1.5rem;
+  color: #555;
+  margin-top: 2rem;
+}
