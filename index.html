@@ -74,6 +74,12 @@
     </div>
   </section>
 
+  <section class="my-5 text-center">
+    <h2 class="section-title mb-3">Try Something Interactive!</h2>
+    <button id="changeColorBtn" class="btn btn-brand me-2">Change Background</button>
+    <button id="subscribeBtn" class="btn btn-outline-dark">Subscribe</button>
+  </section>
+
   <section class="my-5">
     <h2 class="section-title mb-3">Featured Categories</h2>
     <div class="cards-row">
@@ -116,6 +122,20 @@
   </section>
 
 
+  <!-- Popup Form -->
+  <div id="popupForm" class="popup-overlay">
+    <div class="popup-content rounded-4 shadow">
+      <button id="closePopup" class="btn-close btn-close-white"></button>
+      <h4 class="mb-3">Subscribe to Strawberry Express</h4>
+      <form id="subscribeForm">
+        <div class="mb-3">
+          <input type="email" class="form-control" placeholder="Enter your email" required>
+        </div>
+        <button type="submit" class="btn btn-brand w-100">Subscribe</button>
+      </form>
+    </div>
+  </div>
+
   </main>
   <footer>
     <div class="container">
@@ -124,11 +144,15 @@
           <div class="footer-small">
             <strong>Team:</strong> StrawberryExp — I.Armat | T.Marsel | A.Aldiyar — SE2403
           </div>
-          <div class="small text-muted">© 2025 Strawberry Express. All rights reserved.</div>
+        <div class="small text-muted">© 2025 Strawberry Express. <span id="datetime"></span></div>
+      </div>
         </div>
       </div>
     </div>
   </footer>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/popup.js"></script>
+  <script src="assets/js/color-change.js"></script>
+  <script src="assets/js/datetime.js"></script>
   </body>
 </html>
