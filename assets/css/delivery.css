@@ -2,7 +2,7 @@
     --brand-pink: #FF6F6F;
     --brand-pink-dark: #A64747;
     --brand-beige: #F5F5DC;
-    --brand-brown: #795548;
+    --brand-brown: #795548
 }
 
 body {
@@ -11,7 +11,7 @@ body {
     background: linear-gradient(270deg, #ffeaea, #ffd6d6, #ffeaea, #fffdfd);
     background-size: 400% 400%;
     animation: gradientFlow 15s ease infinite;
-    margin: 0;
+    margin: 0
 }
 
 @keyframes gradientFlow {
@@ -44,7 +44,7 @@ body {
 .zone {
     border: 1px solid #f1d4d4;
     border-radius: 1rem;
-    box-shadow: 0 10px 22px rgba(255, 111, 111, .12);
+    box-shadow: 0 10px 22px rgba(255, 111, 111, .12)
 }
 
 .zone .card-title {
@@ -64,7 +64,7 @@ body {
     border-radius: 999px;
     padding: .5rem .9rem;
     font-weight: 600;
-    transition: .2s;
+    transition: .2s
 }
 
 .chip:hover {
@@ -92,7 +92,7 @@ body {
     padding: .9rem 1rem;
     font-weight: 700;
     color: #333;
-    transition: .2s;
+    transition: .2s
 }
 
 .faq-header:hover {
@@ -105,12 +105,12 @@ body {
     max-height: 0;
     transition: max-height .3s ease;
     border-radius: .75rem;
-    border: 1px solid transparent;
+    border: 1px solid transparent
 }
 
 .faq-item.open .faq-content {
     border-color: #f1d4d4;
-    background: #fff;
+    background: #fff
 }
 
 .faq-content .inner {
@@ -121,12 +121,12 @@ body {
     background: var(--brand-pink);
     border-color: var(--brand-pink);
     color: #fff;
-    border-radius: .75rem;
+    border-radius: .75rem
 }
 
 .btn-brand:hover {
     background: var(--brand-pink-dark);
-    border-color: var(--brand-pink-dark);
+    border-color: var(--brand-pink-dark)
 }
 
 footer {
@@ -134,7 +134,7 @@ footer {
     border-top: 1px solid #eee;
     margin-top: 2rem;
     padding: 1.5rem 0;
-    color: #555;
+    color: #555
 }
 
 .footer-small {

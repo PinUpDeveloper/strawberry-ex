@@ -10,23 +10,10 @@ const topicEl = document.getElementById("topic");
 const msgEl = document.getElementById("message");
 const toast = document.getElementById("toast");
 
-function showToast(t) {
-    toast.textContent = t;
-    toast.classList.add("show");
-    setTimeout(() => toast.classList.remove("show"), 2000);
-}
-
-function mark(el, ok) {
-    el.classList.toggle("is-invalid", !ok);
-    return ok;
-}
-
-function validateEmail(v) {
-    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
-}
-function validatePhone(v) {
-    return /^\+?[0-9 ()-]{9,}$/.test(v);
-}
+function showToast(t) { toast.textContent = t; toast.classList.add("show"); setTimeout(() => toast.classList.remove("show"), 2000) }
+function mark(el, ok) { el.classList.toggle("is-invalid", !ok); return ok }
+function validateEmail(v) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v) }
+function validatePhone(v) { return /^\+?[0-9 ()-]{9,}$/.test(v) }
 
 function validateContact() {
     const v1 = mark(nameEl, nameEl.value.trim().length > 1);
@@ -39,7 +26,7 @@ function validateContact() {
 
 contactForm.addEventListener("submit", e => {
     e.preventDefault();
-    if (!validateContact()) { return }
+    if (!validateContact()) return;
     contactForm.reset();
     showToast("Thanks! Your message has been sent.");
 });
@@ -59,7 +46,7 @@ modal.addEventListener("click", e => { if (e.target === modal) modal.classList.r
 document.addEventListener("keydown", e => { if (e.key === "Escape") modal.classList.remove("active") });
 
 function validateSignup() {
-    const ok1 = mark(sEmail, /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(sEmail.value.trim()));
+    const ok1 = mark(sEmail, validateEmail(sEmail.value.trim()));
     const ok2 = mark(sPass, (sPass.value || "").length >= 8);
     const ok3 = mark(sConfirm, sPass.value === sConfirm.value && sConfirm.value !== "");
     return ok1 && ok2 && ok3;
@@ -67,7 +54,7 @@ function validateSignup() {
 
 signupForm.addEventListener("submit", e => {
     e.preventDefault();
-    if (!validateSignup()) { return }
+    if (!validateSignup()) return;
     signupForm.reset();
     signupToast.classList.add("show");
     setTimeout(() => signupToast.classList.remove("show"), 2000);
