@@ -3,17 +3,29 @@
   --brand-pink-dark: #A64747;
   --brand-beige: #F5F5DC;
   --brand-brown: #795548;
+
+  /* Solid background color (can be changed from JS) */
+  --page-bg: #ffffff;
 }
 
 /* Base styles */
+html, body {
+  background: var(--page-bg) !important; /* default solid */
+  transition: background 300ms ease;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
   color: #222;
+}
+
+/* Optional animated gradient (enabled via .bg-animated on <body>) */
+body.bg-animated {
   background: linear-gradient(270deg, #ffeaea, #ffd6d6, #ffeaea, #fffdfd);
   background-size: 400% 400%;
   animation: gradientFlow 15s ease infinite;
-  margin: 0;
-  padding: 0;
 }
 
 @keyframes gradientFlow {

@@ -133,3 +133,9 @@ footer {
     margin-top: 1.5rem;
   }
 }
+/* BG switch support */
+:root { --page-bg: #ffffff; }
+html, body {
+  background-color: var(--page-bg) !important;
+  transition: background-color 300ms ease;
+}
