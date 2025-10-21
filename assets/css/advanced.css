@@ -1,0 +1,36 @@
+:root{
+  --bg:#fff; --fg:#222; --surface:#ffffff; --muted:#6b7280; --card:#fff; --border:#eee;
+  --brand:#FF6F6F; --brand-dark:#A64747;
+}
+html[data-theme="dark"]{
+  --bg:#0f1012; --fg:#e7e7e7; --surface:#14161a; --muted:#a3a3a3; --card:#16181d; --border:#2a2d33;
+}
+html,body{ background:var(--bg); color:var(--fg); transition:background .35s ease,color .35s ease; }
+.section-card{
+  background:var(--surface); border:1px solid var(--border); border-radius:20px; padding:18px;
+  box-shadow:0 6px 18px rgba(0,0,0,.06);
+}
+
+/* Toggle pill */
+.theme-pill{ border:none; background:var(--card); border:1px solid var(--border); padding:8px 14px;
+  border-radius:999px; font-weight:600; display:inline-flex; align-items:center; gap:8px;
+  transition:transform .12s ease, background .3s ease, border-color .3s ease;
+}
+.theme-pill:hover{ transform:translateY(-1px); }
+
+/* Rating (reviews + mini) */
+.stars{ display:inline-flex; gap:6px; }
+.star-btn{ font-size:22px; line-height:1; cursor:pointer; color:#c8c8c8; transition:transform .15s ease,color .15s ease; user-select:none; }
+.star-btn:hover{ transform:scale(1.15); }
+.star-btn.active{ color:#f59e0b; }
+
+/* Keyboard nav buttons */
+.kbd-nav a{ outline:none; }
+
+/* Appear animation for cards/items */
+.appear{ animation:appear .28s ease both; }
+@keyframes appear{ from{opacity:0; transform:translateY(8px)} to{opacity:1; transform:none} }
+
+/* Small helpers */
+.text-muted{ color:var(--muted)!important; }
+hr.soft{ border-color:var(--border); opacity:.45; }
