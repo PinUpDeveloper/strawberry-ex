@@ -44,7 +44,8 @@ body {
 .zone {
     border: 1px solid #f1d4d4;
     border-radius: 1rem;
-    box-shadow: 0 10px 22px rgba(255, 111, 111, .12)
+    box-shadow: 0 10px 22px rgba(255, 111, 111, .12);
+    background: #fff
 }
 
 .zone .card-title {
@@ -139,4 +140,36 @@ footer {
 
 .footer-small {
     font-size: .95rem
+}
+
+.stars {
+    display: inline-flex;
+    gap: .25rem;
+    font-size: 1.25rem;
+    cursor: pointer
+}
+
+.stars span {
+    color: #ccc;
+    transition: transform .15s ease
+}
+
+.stars span.active {
+    color: #FFA83A;
+    transform: scale(1.1)
+}
+
+body.dark {
+    background: #191919;
+    color: #e9e9e9
+}
+
+body.dark .navbar {
+    background: #1f1f1f !important
+}
+
+.zone,
+.faq-header,
+.chip {
+    transition: transform .2s ease, box-shadow .2s ease
 }

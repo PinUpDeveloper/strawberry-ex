@@ -77,7 +77,8 @@ body {
     border-radius: .75rem;
     opacity: 0;
     pointer-events: none;
-    transition: .3s
+    transition: .3s;
+    z-index: 1100
 }
 
 .toast-lite.show {
@@ -118,4 +119,54 @@ footer {
 
 .footer-small {
     font-size: .95rem
+}
+
+.more {
+    transition: max-height .3s ease, opacity .3s ease
+}
+
+.d-none {
+    display: none
+}
+
+.stars {
+    display: inline-flex;
+    gap: .25rem;
+    font-size: 1.25rem;
+    cursor: pointer
+}
+
+.stars span {
+    color: #ccc;
+    transition: transform .15s ease
+}
+
+.stars span.active {
+    color: #FFA83A;
+    transform: scale(1.1)
+}
+
+body.dark {
+    background: #191919;
+    color: #e9e9e9
+}
+
+body.dark .navbar {
+    background: #1f1f1f !important
+}
+
+body.dark .hero,
+body.dark .modal-card {
+    background: #252525;
+    border-color: #333
+}
+
+body.dark .btn-outline-dark {
+    color: #e9e9e9;
+    border-color: #666
+}
+
+body.dark .btn-outline-secondary {
+    color: #e9e9e9;
+    border-color: #666
 }
