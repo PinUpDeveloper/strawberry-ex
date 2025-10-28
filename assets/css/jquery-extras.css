@@ -1,0 +1,63 @@
+/* Autocomplete list */
+.autocomplete-list {
+  position: absolute;
+  z-index: 30;
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: .5rem;
+  width: 100%;
+  max-width: 100%;
+  margin-top: .25rem;
+  box-shadow: 0 8px 24px rgba(0,0,0,.08);
+  display: none;
+}
+.autocomplete-list .suggestion {
+  padding: .5rem .75rem;
+  cursor: pointer;
+}
+.autocomplete-list .suggestion:hover {
+  background: #fff4f4;
+}
+
+/* Highlighted text */
+.highlight {
+  background: #ffed9f;
+  color: #222;
+  border-radius: .25rem;
+  padding: 0 .15rem;
+}
+
+/* Scroll progress bar */
+#progressContainer {
+  position: fixed; top: 0; left: 0; width: 100%; height: 5px;
+  background: rgba(0,0,0,.05); z-index: 9999;
+}
+#progressBar {
+  height: 5px; width: 0%; background: #FF6F6F;
+  transition: width .15s ease;
+}
+
+/* Spinner for submit */
+.spinner {
+  border: 2px solid #ccc;
+  border-top: 2px solid #FF6F6F;
+  border-radius: 50%;
+  width: 14px; height: 14px;
+  display: inline-block;
+  vertical-align: -2px;
+  margin-right: 6px;
+  animation: spin .7s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* Toast (fallback if #addToast not present) */
+.toast-float {
+  position: fixed; bottom: 20px; right: 20px;
+  background: #FF6F6F; color: #fff; padding: 10px 14px;
+  border-radius: 10px; display: none;
+  box-shadow: 0 8px 24px rgba(0,0,0,.2);
+}
+
+/* Lazy images placeholder style (optional border) */
+img.lazy { filter: blur(3px); transition: filter .25s; }
+img.lazy.loaded { filter: none; }
