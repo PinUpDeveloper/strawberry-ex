@@ -9,7 +9,7 @@
   </head>
   <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg bg-white sticky-top shadow-sm">
+    <nav class="navbar navbar-expand-lg sticky-top shadow-sm">
       <div class="container">
         <a class="navbar-brand d-flex align-items-center" href="../index.html">
           <img src="../assets/img/logo.png" alt="Strawberry Express logo">
@@ -168,6 +168,74 @@
         </div>
       </section>
 
+      <!-- ADD: Interactive jQuery blocks (no deletion of existing content) -->
+      <!-- Search & Autocomplete -->
+      <section class="my-5">
+        <h2 class="section-title mb-3 text-center">Search & Suggestions</h2>
+        <div class="row justify-content-center">
+          <div class="col-md-8">
+            <input id="searchInput" class="form-control mb-3" placeholder="Search parts of this page (live filter)...">
+            <ul class="list-group mb-3">
+              <li class="list-group-item search-item">Our Story</li>
+              <li class="list-group-item search-item">Our Mission</li>
+              <li class="list-group-item search-item">Customer Reviews</li>
+              <li class="list-group-item search-item">Delivery Options</li>
+              <li class="list-group-item search-item">Eco Packaging</li>
+            </ul>
+
+            <input id="autocompleteInput" class="form-control mb-2" placeholder="Autocomplete: try 'Eco'...">
+            <ul id="suggestionsList" class="list-group mb-3" style="display:block;"></ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Highlight Keyword -->
+      <section class="my-5">
+        <h2 class="section-title mb-3 text-center">Highlight Keyword</h2>
+        <div class="row justify-content-center">
+          <div class="col-md-8">
+            <div class="d-flex gap-2 mb-2">
+              <input id="highlightInput" class="form-control" placeholder="Enter word to highlight on this page...">
+              <button id="highlightBtn" class="btn btn-brand">Highlight</button>
+            </div>
+            <p class="faq-section">
+              We collaborate closely with family farms and local artisans. Sustainability and transparency are at the core of our approach — from farm to doorstep.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Counter + Subscribe (spinner) -->
+      <section class="my-5 text-center">
+        <h2 class="section-title mb-3">Numbers that matter</h2>
+        <div class="mb-3">
+          <h3 class="counter fw-bold" data-target="1200">0</h3>
+          <p class="text-muted">boxes delivered this month</p>
+        </div>
+
+        <form id="fakeForm" class="d-inline-block">
+          <button id="submitBtn" class="btn btn-brand">Subscribe for updates</button>
+        </form>
+      </section>
+
+      <!-- Quick Actions: Notification + Copy -->
+      <section class="quick-actions my-5 text-center">
+        <h2 class="section-title mb-3">Quick Actions</h2>
+        <button id="showNotificationBtn" class="btn btn-brand mb-3">Show Notification</button>
+
+        <div class="copy-container justify-content-center">
+          <span id="promoCode" class="me-2">ABOUTPROMO2025</span>
+          <button id="copyBtn" class="btn btn-outline-secondary">Copy</button>
+        </div>
+      </section>
+
+      <!-- Lazy loading image demo -->
+      <section class="my-5 text-center">
+        <h2 class="section-title mb-3">Media</h2>
+        <img class="lazy rounded-4 shadow-sm" data-src="../assets/img/local-produce.jpg" width="720" height="360" alt="Lazy loaded produce">
+      </section>
+      <!-- END ADD -->
+
       <section class="my-5 text-center bg-light rounded-4 p-5 shadow-sm">
         <h2 class="section-title mb-3">Join Our Eco Journey</h2>
         <p class="lead mb-4">Be part of a community that values freshness, transparency, and respect for the planet.</p>
@@ -205,5 +273,7 @@
     <script src="../assets/js/rating.js"></script>
     <script src="../assets/js/readmore.js"></script>
     <script src="../assets/js/theme.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="../assets/js/ass7mars.js"></script>
   </body>
 </html>
