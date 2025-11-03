@@ -135,6 +135,12 @@ footer{
   border-radius: .75rem;
 }
 
+.carousel-caption { font-size: 0.9rem; }
+@media (max-width: 576px){
+  .carousel-caption h1 { font-size: 1.2rem; }
+  .carousel-caption p { display: none; }
+}
+
 /* Card images */
 .card-img-top{
   height: 220px;
@@ -298,3 +304,34 @@ footer{
 }
 #suggestionsList { max-height: 220px; overflow:auto; }
 
+/* Тёмная тема */
+
+body.theme-night {
+  background-color: #1e1e1e !important;
+  color: #f1f1f1 !important;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Чтобы фон не перекрывали другие блоки */
+body.theme-night .navbar,
+body.theme-night footer {
+  background-color: #222 !important;
+}
+
+body.theme-night .card,
+body.theme-night .popup-content {
+  background-color: #2a2a2a !important;
+  color: #f1f1f1 !important;
+}
+
+body.theme-night .btn-brand {
+  background-color: #ff7676 !important;
+}
+
+img {
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+img.lazy {
+  opacity: 0;
+}
