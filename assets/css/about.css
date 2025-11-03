@@ -378,3 +378,11 @@ body.theme-night .popup-content {
 body.theme-night .btn-brand {
   background-color: #ff7676;
 }
+
+img {
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+img.lazy {
+  opacity: 0;
+}
