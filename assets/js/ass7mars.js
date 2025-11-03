@@ -92,14 +92,17 @@ $(document).ready(function() {
       $(this).text("Copy").removeClass("btn-success");
     }, 1500);
   });
-
-  // Task 9
-  $(window).on("scroll", function() {
-    $("img.lazy").each(function() {
-      if ($(this).offset().top < $(window).scrollTop() + $(window).height()) {
-        $(this).attr("src", $(this).data("src")).removeClass("lazy");
-      }
-    });
+  
+// Task 9 — Lazy loading
+function checkLazyImages() {
+  $("img.lazy").each(function() {
+    if ($(this).offset().top < $(window).scrollTop() + $(window).height()) {
+      $(this).attr("src", $(this).data("src")).removeClass("lazy");
+    }
   });
+}
+
+$(window).on("scroll", checkLazyImages);
+$(document).ready(checkLazyImages);
 
 });
