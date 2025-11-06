@@ -9,13 +9,28 @@
 }
 
 html.theme-dark {
-    --text: #e8e8e8;
+    --text: #9d9bff;
     --muted: #a9b1bc;
-    --bg: #0f1115;
+    --bg: #2a2a2a;
     --card: #161a22;
     --border: #202633;
     --brand-pink: #ff7e7e;
     --brand-pink-dark: #ff5d5d;
+}
+
+p.theme-dark {
+    color: #dad9ff;
+}
+
+span.theme-dark {
+    color: #00ff8c;
+}
+
+.faq-q.theme-dark{
+    color:#dad9ff;
+}
+.nav-link.theme-dark{
+    color:#dad9ff;
 }
 
 * {

@@ -9,13 +9,36 @@
 }
 
 html.theme-dark {
-    --text: #e8e8e8;
+    --text: #9d9bff;
     --muted: #a9b1bc;
-    --bg: #0f1115;
+    --bg: #313131;
     --card: #161a22;
     --border: #202633;
     --brand-pink: #ff7e7e;
     --brand-pink-dark: #ff5d5d;
+}
+
+p.theme-dark {
+    color: #dad9ff;
+}
+
+.aldikPencil.theme-dark{
+    background-color: #383838 !important;
+}
+
+.aldik.theme-dark{
+    background-color: #383838;
+}
+
+span.theme-dark {
+    color: #00ff8c;
+}
+
+.faq-q.theme-dark{
+    color:#dad9ff;
+}
+.nav-link.theme-dark{
+    color:#dad9ff;
 }
 
 * {
@@ -26,7 +49,7 @@ body {
     margin: 0;
     font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
     color: var(--text);
-    background: linear-gradient(270deg, #fff4f4, #ffeaea, #fffdfd);
+    background-color: linear-gradient(270deg, #fff4f4, #ffeaea, #fffdfd);
     background-size: 400% 400%;
     animation: gradientFlow 15s ease infinite;
 }
@@ -148,7 +171,7 @@ html.theme-dark .toast-mini {
 }
 
 footer {
-    background: #f8f9fa;
+    background: #ff7e7e;
     border-top: 1px solid var(--border);
     margin-top: 2rem;
     padding: 1.2rem 0;

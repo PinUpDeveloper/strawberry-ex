@@ -1,6 +1,13 @@
 $(function () {
     const THEME_KEY = "se-theme";
-    function applyTheme(t) { $("html").toggleClass("theme-dark", t === "dark"); $("#themeToggle").text(t === "dark" ? "Day" : "Night") }
+    function applyTheme(t) { $("html").toggleClass("theme-dark", t === "dark"); 
+            $("p").toggleClass("theme-dark", t === "dark");
+            $(".faq-q").toggleClass("theme-dark", t === "dark");
+            $("span").toggleClass("theme-dark", t === "dark");
+            $(".nav-link").toggleClass("theme-dark", t === "dark");
+            $(".aldik").toggleClass("theme-dark", t === "dark");
+            $(".aldikPencil").toggleClass("theme-dark", t === "dark");
+        $("#themeToggle").text(t === "dark" ? "Day" : "Night") }
     function getTheme() { return localStorage.getItem(THEME_KEY) || "light" }
     applyTheme(getTheme());
     $("#themeToggle").on("click", function () { const n = getTheme() === "dark" ? "light" : "dark"; localStorage.setItem(THEME_KEY, n); applyTheme(n) })
