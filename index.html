@@ -1,227 +1,493 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Home • Strawberry Express</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/index.css">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/index.css" />
+    <script defer src="assets/js/login.js"></script>
+    <script defer src="assets/js/fruitApi.js"></script>
   </head>
   <body>
-  <nav class="navbar navbar-expand-lg">
-    <div class="container">
-      <a class="navbar-brand d-flex align-items-center" href="index.html">
-        <img src="assets/img/logo.png" alt="Strawberry Express logo">
-        <span class="fw-bold">Strawberry Express</span>
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample" aria-controls="navbarsExample" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="index.html">
+          <img src="assets/img/logo.png" alt="Strawberry Express logo" />
+          <span class="fw-bold nav-str">Strawberry Express</span>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarsExample"
+          aria-controls="navbarsExample"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-      <div class="collapse navbar-collapse" id="navbarsExample">
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-          <li class="nav-item"><a class="nav-link active fw-semibold" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link " href="html/products.html">Products</a></li>
-          <li class="nav-item"><a class="nav-link " href="html/delivery.html">Delivery</a></li>
-          <li class="nav-item"><a class="nav-link " href="html/about.html">About</a></li>
-          <li class="nav-item"><a class="nav-link " href="html/contact.html">Contact</a></li>
-          <li class="nav-item ms-lg-2"><a class="btn btn-sm btn-brand" href="html/cart.html">Cart</a></li>
+        <div class="collapse navbar-collapse" id="navbarsExample">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active fw-semibold" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-str" href="html/products.html">Products</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-str" href="html/delivery.html">Delivery</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-str" href="html/about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link nav-str" href="html/contact.html">Contact</a>
+            </li>
+            <li class="nav-item ms-lg-2">
+              <a class="btn btn-sm btn-brand" href="html/cart.html">Cart</a>
+            </li>
+            <li class="nav-item" id="login-container">
+              <button id="login-btn" class="btn btn-sm btn-brand">Login</button>
+            </li>
+            <li class="nav-item" id="user-container" style="display: none">
+              <button id="user-btn" class="btn btn-sm btn-brand">
+                <span id="user-nick"></span>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Scroll Progress Bar (Task 4) -->
+    <div
+      id="scrollBar"
+      style="
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 6px;
+        background: linear-gradient(90deg, #ff6f6f, #ffa8a8);
+        width: 0%;
+        z-index: 9999;
+      "
+    ></div>
+
+    <main class="container my-4">
+      <section class="hero p-3 p-lg-4">
+        <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-indicators">
+            <button
+              type="button"
+              data-bs-target="#heroCarousel"
+              data-bs-slide-to="0"
+              class="active"
+              aria-current="true"
+              aria-label="Slide 1"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#heroCarousel"
+              data-bs-slide-to="1"
+              aria-label="Slide 2"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#heroCarousel"
+              data-bs-slide-to="2"
+              aria-label="Slide 3"
+            ></button>
+          </div>
+          <div class="carousel-inner rounded-3">
+            <div class="carousel-item active">
+              <img
+                src="assets/img/home-1.jpg"
+                class="d-block w-100"
+                alt="Fresh Fruits"
+              />
+              <div class="carousel-caption text-start">
+                <h1>Fresh to Your Door</h1>
+                <p class="lead">Same-day delivery of local, organic produce.</p>
+                <p>
+                  <a class="btn btn-brand btn-lg" href="html/products.html"
+                    >Shop now</a
+                  >
+                </p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img
+                src="assets/img/home-2.webp"
+                class="d-block w-100"
+                alt="Organic Veggies"
+              />
+              <div class="carousel-caption">
+                <h1>Eco & Organic</h1>
+                <p class="lead">Curated suppliers, transparent sourcing.</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img
+                src="assets/img/home-3.webp"
+                class="d-block w-100"
+                alt="Dairy & Eggs"
+              />
+              <div class="carousel-caption text-end">
+                <h1>Weekly Deals</h1>
+                <p class="lead">Save on seasonal boxes and staples.</p>
+              </div>
+            </div>
+          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#heroCarousel"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#heroCarousel"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </section>
+
+      <section class="my-5 text-center">
+        <h2 class="section-title mb-3">Try Something Interactive!</h2>
+        <p>Random Number: <span id="randomNumber"></span></p>
+        <button class="btn btn-brand me-2" id="newNumberBtn">
+          Generate Random Number
+        </button>
+        <!-- <button id="changeColorBtn" class="btn btn-brand me-2">Change Background</button> -->
+        <button id="subscribeBtn" class="btn btn-brand me-2">Subscribe</button>
+        <button id="themeSwitch" class="btn btn-brand me-2">
+          Switch to Night 🌙
+        </button>
+      </section>
+
+      <section class="my-5">
+        <h2 class="section-title mb-3">Featured Categories</h2>
+        <div class="cards-row">
+          <div class="card feature">
+            <img
+              class="card-img-top"
+              src="assets/img/home-1.jpg"
+              alt="Fruits"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Fruits</h5>
+              <p class="card-text">
+                Strawberries, apples, berries — hand-picked freshness.
+              </p>
+              <a href="html/products.html" class="btn btn-brand">Browse</a>
+            </div>
+          </div>
+          <div class="card feature">
+            <img
+              class="card-img-top"
+              src="assets/img/home-2.webp"
+              alt="Vegetables"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Vegetables</h5>
+              <p class="card-text">
+                Leafy greens, roots, herbs — always in season.
+              </p>
+              <a href="html/products.html" class="btn btn-brand">Browse</a>
+            </div>
+          </div>
+          <div class="card feature">
+            <img
+              class="card-img-top"
+              src="assets/img/bakery.avif"
+              alt="Bakery"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Bakery</h5>
+              <p class="card-text">Freshly baked bread, pastries, and pies.</p>
+              <a href="html/products.html" class="btn btn-brand">Browse</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="my-5">
+        <h2 class="section-title mb-3">Why choose Strawberry Express?</h2>
+        <div class="grid-why">
+          <div class="why-box a">
+            <h5>Local & Seasonal</h5>
+            <p>
+              We prioritize local farms to reduce footprint and maximize
+              freshness.
+            </p>
+          </div>
+          <div class="why-box b">
+            <h5>Eco Packaging</h5>
+            <p>Recyclable and compostable packaging across all orders.</p>
+          </div>
+          <div class="why-box c">
+            <h5>Flexible Delivery</h5>
+            <p>Same-day delivery in selected areas, convenient time windows.</p>
+          </div>
+          <div class="why-box d">
+            <h5>Quality First</h5>
+            <p>Strict supplier checks and cold chain for sensitive items.</p>
+          </div>
+          <div class="why-box e">
+            <h5>Great Support</h5>
+            <p>Fast response chat, refunds/returns without hassle.</p>
+          </div>
+        </div>
+      </section>
+
+      <div id="popupForm" class="popup-overlay">
+        <div class="popup-content rounded-4 shadow">
+          <button id="closePopup" class="btn-close btn-close-white"></button>
+          <h4 class="mb-3">Subscribe to Strawberry Express</h4>
+          <form id="subscribeForm">
+            <div class="mb-3">
+              <input
+                type="email"
+                class="form-control"
+                placeholder="Enter your email"
+                required
+              />
+            </div>
+            <button type="submit" class="btn btn-brand w-100">Subscribe</button>
+          </form>
+        </div>
+      </div>
+
+      <section class="my-5">
+        <h2 class="section-title mb-3">🔎 Search & Autocomplete</h2>
+
+        <div class="mb-3">
+          <input
+            id="searchInput"
+            class="form-control"
+            placeholder="Type to search products..."
+          />
+        </div>
+        <ul class="list-group mb-3" id="searchResults">
+          <li class="list-group-item search-item">Apple</li>
+          <li class="list-group-item search-item">Banana</li>
+          <li class="list-group-item search-item">Strawberry Cake</li>
+          <li class="list-group-item search-item">Fresh Milk</li>
+          <li class="list-group-item search-item">Carrot</li>
         </ul>
-      </div>
-    </div>
-  </nav>
 
-  <!-- Scroll Progress Bar (Task 4) -->
-  <div id="scrollBar" style="position:fixed;top:0;left:0;height:6px;background:linear-gradient(90deg,#ff6f6f,#ffa8a8);width:0%;z-index:9999;"></div>
-
-  <main class="container my-4">
-
-    <section class="hero p-3 p-lg-4">
-      <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-          <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <div class="mb-3">
+          <input
+            id="autocompleteInput"
+            class="form-control"
+            placeholder="Autocomplete: try 'Straw'..."
+          />
+          <ul
+            id="suggestionsList"
+            class="list-group mt-2"
+            style="display: block"
+          ></ul>
         </div>
-        <div class="carousel-inner rounded-3">
-          <div class="carousel-item active">
-            <img src="assets/img/home-1.jpg" class="d-block w-100" alt="Fresh Fruits">
-            <div class="carousel-caption text-start">
-              <h1>Fresh to Your Door</h1>
-              <p class="lead">Same-day delivery of local, organic produce.</p>
-              <p><a class="btn btn-brand btn-lg" href="html/products.html">Shop now</a></p>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img src="assets/img/home-2.webp" class="d-block w-100" alt="Organic Veggies">
-            <div class="carousel-caption">
-              <h1>Eco & Organic</h1> 
-              <p class="lead">Curated suppliers, transparent sourcing.</p>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <img src="assets/img/home-3.webp" class="d-block w-100" alt="Dairy & Eggs">
-            <div class="carousel-caption text-end">
-              <h1>Weekly Deals</h1>
-              <p class="lead">Save on seasonal boxes and staples.</p>
-            </div>
-          </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-      </div>
-    </section>
+      </section>
 
-    <section class="my-5 text-center">
-      <h2 class="section-title mb-3">Try Something Interactive!</h2>
-      <button id="changeColorBtn" class="btn btn-brand me-2">Change Background</button>
-      <button id="subscribeBtn" class="btn btn-brand me-2">Subscribe</button>
-        <button id="themeSwitch" class="btn btn-brand me-2">Switch to Night 🌙 </button>
-    </section>
-
-    <section class="my-5">
-      <h2 class="section-title mb-3">Featured Categories</h2>
-      <div class="cards-row">
-        <div class="card feature">
-          <img class="card-img-top" src="assets/img/home-1.jpg" alt="Fruits">
-          <div class="card-body">
-            <h5 class="card-title">Fruits</h5>
-            <p class="card-text">Strawberries, apples, berries — hand-picked freshness.</p>
-            <a href="html/products.html" class="btn btn-brand">Browse</a>
-          </div>
+      <section class="my-5 faq-section">
+        <h2 class="section-title mb-3">✨ Highlight Keyword</h2>
+        <div class="d-flex gap-2 mb-2">
+          <input
+            id="highlightInput"
+            class="form-control"
+            placeholder="Enter word to highlight"
+          />
+          <button id="highlightBtn" class="btn btn-brand">Highlight</button>
         </div>
-        <div class="card feature">
-          <img class="card-img-top" src="assets/img/home-2.webp" alt="Vegetables">
-          <div class="card-body">
-            <h5 class="card-title">Vegetables</h5>
-            <p class="card-text">Leafy greens, roots, herbs — always in season.</p>
-            <a href="html/products.html" class="btn btn-brand">Browse</a>
-          </div>
-        </div>
-        <div class="card feature">
-          <img class="card-img-top" src="assets/img/bakery.avif" alt="Bakery">
-          <div class="card-body">
-            <h5 class="card-title">Bakery</h5>
-            <p class="card-text">Freshly baked bread, pastries, and pies.</p>
-            <a href="html/products.html" class="btn btn-brand">Browse</a>
-          </div>
-        </div>
-      </div>
-    </section>
+        <p id="highlightTarget">
+          Strawberry Express brings you the freshest fruits, vegetables, and
+          bakery goods every day. Our fruits are hand-picked and our pastries
+          baked daily.
+        </p>
+      </section>
 
-    <section class="my-5">
-      <h2 class="section-title mb-3">Why choose Strawberry Express?</h2>
-      <div class="grid-why">
-        <div class="why-box a"><h5>Local & Seasonal</h5><p>We prioritize local farms to reduce footprint and maximize freshness.</p></div>
-        <div class="why-box b"><h5>Eco Packaging</h5><p>Recyclable and compostable packaging across all orders.</p></div>
-        <div class="why-box c"><h5>Flexible Delivery</h5><p>Same-day delivery in selected areas, convenient time windows.</p></div>
-        <div class="why-box d"><h5>Quality First</h5><p>Strict supplier checks and cold chain for sensitive items.</p></div>
-        <div class="why-box e"><h5>Great Support</h5><p>Fast response chat, refunds/returns without hassle.</p></div>
-      </div>
-    </section>
+      <section class="text-center my-5">
+        <h2 class="section-title mb-3">🔢 Stats</h2>
+        <h3 class="counter fw-bold" data-target="2500">0</h3>
+        <p class="text-muted">Happy customers and counting</p>
+      </section>
 
-    <div id="popupForm" class="popup-overlay">
-      <div class="popup-content rounded-4 shadow">
-        <button id="closePopup" class="btn-close btn-close-white"></button>
-        <h4 class="mb-3">Subscribe to Strawberry Express</h4>
-        <form id="subscribeForm">
-          <div class="mb-3">
-            <input type="email" class="form-control" placeholder="Enter your email" required>
-          </div>
-          <button type="submit" class="btn btn-brand w-100">Subscribe</button>
+      <section class="my-5 text-center">
+        <h2 class="section-title mb-3">✉️ Subscribe</h2>
+        <form id="fakeForm" class="d-inline-block">
+          <button id="submitBtn" class="btn btn-brand" type="submit">
+            Submit
+          </button>
         </form>
-      </div>
-    </div>
+      </section>
 
-<section class="my-5">
-  <h2 class="section-title mb-3">🔎 Search & Autocomplete</h2>
+      <section class="quick-actions my-5 text-center">
+        <h2 class="section-title mb-3">🔔 Quick Actions</h2>
+        <button id="showNotificationBtn" class="btn btn-brand mb-3">
+          Show Notification
+        </button>
 
-  <div class="mb-3">
-    <input id="searchInput" class="form-control" placeholder="Type to search products...">
-  </div>
-  <ul class="list-group mb-3" id="searchResults">
-    <li class="list-group-item search-item">Apple</li>
-    <li class="list-group-item search-item">Banana</li>
-    <li class="list-group-item search-item">Strawberry Cake</li>
-    <li class="list-group-item search-item">Fresh Milk</li>
-    <li class="list-group-item search-item">Carrot</li>
-  </ul>
+        <div class="copy-container justify-content-center">
+          <span id="promoCode" class="me-2">StrawberryExpress2025</span>
+          <button id="copyBtn" class="btn btn-outline-secondary">Copy</button>
+        </div>
+      </section>
 
-  <div class="mb-3">
-    <input id="autocompleteInput" class="form-control" placeholder="Autocomplete: try 'Straw'...">
-    <ul id="suggestionsList" class="list-group mt-2" style="display:block;"></ul>
-  </div>
-</section>
+      <section class="text-center my-5">
+        <h2 class="section-title mb-3">🖼️ Lazy Loading Demo</h2>
+        <img
+          class="lazy rounded-4 shadow-sm"
+          data-src="assets/img/home-2.webp"
+          width="480"
+          height="300"
+          alt="Lazy product demo"
+        />
+      </section>
+      <!-- Login Popup -->
+      <div id="login-popup" class="popup-overlay" style="display: none">
+        <div class="popup-content">
+          <span class="popup-close">&times;</span>
 
-<section class="my-5 faq-section">
-  <h2 class="section-title mb-3">✨ Highlight Keyword</h2>
-  <div class="d-flex gap-2 mb-2">
-    <input id="highlightInput" class="form-control" placeholder="Enter word to highlight">
-    <button id="highlightBtn" class="btn btn-brand">Highlight</button>
-  </div>
-  <p id="highlightTarget">
-    Strawberry Express brings you the freshest fruits, vegetables, and bakery goods every day. Our fruits are hand-picked and our pastries baked daily.
-  </p>
-</section>
+          <!-- Error/Success Messages -->
+          <div id="auth-message" style="display: none"></div>
 
-<section class="text-center my-5">
-  <h2 class="section-title mb-3">🔢 Stats</h2>
-  <h3 class="counter fw-bold" data-target="2500">0</h3>
-  <p class="text-muted">Happy customers and counting</p>
-</section>
-
-<section class="my-5 text-center">
-  <h2 class="section-title mb-3">✉️ Subscribe</h2>
-  <form id="fakeForm" class="d-inline-block">
-    <button id="submitBtn" class="btn btn-brand" type="submit">Submit</button>
-  </form>
-</section>
-
-<section class="quick-actions my-5 text-center">
-  <h2 class="section-title mb-3">🔔 Quick Actions</h2>
-  <button id="showNotificationBtn" class="btn btn-brand mb-3">Show Notification</button>
-
-  <div class="copy-container justify-content-center">
-    <span id="promoCode" class="me-2">StrawberryExpress2025</span>
-    <button id="copyBtn" class="btn btn-outline-secondary">Copy</button>
-  </div>
-</section>
-
-<section class="text-center my-5">
-  <h2 class="section-title mb-3">🖼️ Lazy Loading Demo</h2>
-  <img class="lazy rounded-4 shadow-sm"
-       data-src="assets/img/home-2.webp"
-       width="480" height="300"
-       alt="Lazy product demo">
-</section>
-
-
-  <footer>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-8">
-          <div class="footer-small">
-            <strong>Team:</strong> StrawberryExp — I.Armat | T.Marsel | A.Aldiyar — SE2403
-          </div>
-          <div class="small text-muted">© 2025 Strawberry Express. <span id="datetime"></span></div>
+          <form id="login-form">
+            <h3>Login</h3>
+            <div class="mb-3">
+              <label for="login-email" class="form-label">Email</label>
+              <input
+                type="email"
+                id="login-email"
+                class="form-control"
+                placeholder="your@email.com"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label for="login-password" class="form-label">Password</label>
+              <input
+                type="password"
+                id="login-password"
+                class="form-control"
+                placeholder="Enter password"
+                required
+              />
+            </div>
+            <button type="submit" class="btn btn-danger w-100">Login</button>
+            <div class="auth-switch">
+              Don't have an account?
+              <a href="#" id="switch-to-signup">Sign Up</a>
+            </div>
+          </form>
         </div>
       </div>
-    </div>
-  </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/js/popup.js"></script>
-  <script src="assets/js/color-change.js"></script>
-  <script src="assets/js/sound.js"></script>
-  <script src="assets/js/datetime.js"></script>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="assets/js/ass7mars.js"></script>
-  <script src="assets/js/theme.js"></script>
-</body>
+      <!-- Signup Popup -->
+      <div id="signup-popup" class="popup-overlay" style="display: none">
+        <div class="popup-content">
+          <span class="popup-close">&times;</span>
+
+          <!-- Error/Success Messages -->
+          <div id="signup-message" style="display: none"></div>
+
+          <form id="signup-form">
+            <h3>Sign Up</h3>
+            <div class="mb-3">
+              <label for="signup-email" class="form-label">Email</label>
+              <input
+                type="email"
+                id="signup-email"
+                class="form-control"
+                placeholder="your@email.com"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label for="signup-nickname" class="form-label">Nickname</label>
+              <input
+                type="text"
+                id="signup-nickname"
+                class="form-control"
+                placeholder="Your nickname"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label for="signup-password" class="form-label">Password</label>
+              <input
+                type="password"
+                id="signup-password"
+                class="form-control"
+                placeholder="Min. 6 characters"
+                required
+              />
+            </div>
+            <button type="submit" class="btn btn-danger w-100">Sign Up</button>
+            <div class="auth-switch">
+              Already have an account?
+              <a href="#" id="switch-to-login">Login</a>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- Profile Info Popup -->
+      <div id="profile-popup" class="popup-overlay" style="display: none">
+        <div class="popup-content">
+          <span class="popup-close">&times;</span>
+          <h3>User Profile</h3>
+          <div class="profile-info">
+            <p><strong>Nickname:</strong> <span id="profile-nick"></span></p>
+            <p><strong>Email:</strong> <span id="profile-email"></span></p>
+            <p class="password-field">
+              <strong>Password:</strong>
+              <span id="profile-pass">••••••••</span>
+              <span class="toggle-password" id="toggle-pass">👁️</span>
+            </p>
+          </div>
+          <button id="profile-logout" class="btn btn-danger w-100">
+            Logout
+          </button>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8">
+            <div class="footer-small">
+              <strong>Team:</strong> StrawberryExp — I.Armat | T.Marsel |
+              A.Aldiyar — SE2403
+            </div>
+            <div class="small text-muted">
+              © 2025 Strawberry Express. <span id="datetime"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/popup.js"></script>
+    <script src="assets/js/color-change.js"></script>
+    <script src="assets/js/sound.js"></script>
+    <script src="assets/js/datetime.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/ass7mars.js"></script>
+    <script src="assets/js/theme.js"></script>
+  </body>
 </html>
