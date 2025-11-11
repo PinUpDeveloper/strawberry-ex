@@ -3,7 +3,7 @@
 
 Team: **StrawberryExp** — I.Armat | T.Marsel | A.Aldiyar — **SE2403**
 
-This project satisfies **Assignment 2 + 3 + 4** in one implementation:
+This project satisfies **Every Assignment** in one implementation:
 - External CSS (`assets/css/style.css`) with selectors, typography, colors, backgrounds
 - **Flexbox** (cards row) + **CSS Grid** (why section, gallery)
 - **Media Queries** (typography scaling, card stacking)
